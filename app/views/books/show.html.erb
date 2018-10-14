@@ -1,0 +1,21 @@
+
+ <% if flash[:success] %>
+      <div class="flash">
+        <%= flash[:success] %>
+      </div>
+    <% end %>
+<table>
+	<tr>
+		<td>Title</td>
+		<td><%= @book.title %></td>
+	</tr>
+
+	<tr>
+		<td>Body</td>
+		<td><%= @book.body %></td>
+	</tr>
+</table>
+<br>
+<%= link_to "edit", edit_book_path(@book.id)%>
+<br>
+<%= link_to "back", books_path(@book.id)%>

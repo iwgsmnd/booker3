@@ -1,0 +1,10 @@
+<%= form_for(@book) do |f| %>
+<p>title</p>
+<%= f.text_field :title %>
+
+<p>sentence</p>
+<%= f.text_area :body %>
+
+<%= f.submit "Edit" %>
+<% end %>
+<%= link_to "Back", books_path %>

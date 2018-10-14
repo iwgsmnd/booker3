@@ -1,0 +1,28 @@
+<h3>ALL</h3>
+<table>
+		<tr align="center">
+			<th>Title</th>
+			<th>body</th>
+		</tr>
+			<% @books.each do |t| %>
+
+					<tr width="300">
+						<td width="300"><%= t.title %></td>
+						<td width="300"><%= t.body %> </td>
+						<td><%= link_to "show" ,book_path(t.id) %></td>
+						<td><%= link_to "edit" ,edit_book_path(t.id) %></td>
+						<td><%= link_to "delete", book_path(t.id), method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
+					</tr>
+			<% end %>
+</table>
+
+<h3>Newpost</h3>
+<%= form_for(@book) do |n| %>
+<div>title</div>
+<%= n.text_field :title %>
+<div>body</div>
+<%= n.text_area :body %>
+
+<%= n.submit "send" %>
+
+<% end %>
